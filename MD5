@@ -1,0 +1,13 @@
+789ce4928b5c067857b05195af277abe *DESCRIPTION
+0dc0e9fd20bf5b08d280c3fe084c3cf6 *NAMESPACE
+e60d4d67d05099742ac2796db90ae189 *R/plotTrait.R
+8b807fc3476e8b2278686300a7eb7283 *R/test.windex.R
+95e7ebf72a5ef3630602bad58af6a983 *R/windex.R
+2c7a56bbe0f9c3c59607c82efba587d9 *data/sample.data.rda
+f0bb80d375b64a21bb8e8a75fe2a6ebf *data/sample.tree.rda
+9b254a1726f2d6db18d8741b6862d9d1 *man/plotTrait.Rd
+e0479042c15ce1be6145d8e8afd5743a *man/sample.data.Rd
+eb045c09f7a2cce327d21627d7ee8fed *man/sample.tree.Rd
+606811acd5b5181f65663791796b5545 *man/test.windex.Rd
+c446261c8a558d20e5e777deba93e49f *man/windex-package.Rd
+e27c4b01da163611f2d774c4aa0a5cc7 *man/windex.Rd
