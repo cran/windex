@@ -7,7 +7,7 @@ Provides a visualisation of up to three-dimensional trait space (not accounting 
 Plots the trait space occupied by up to 3 traits with focals highlighted in red.
 }
 \usage{
-plotTrait(dat, traits, focal = dat[, 2])
+plotTrait(dat, traits, focal = dat[, 2], ...)
 }
 \arguments{
   \item{dat}{
@@ -19,12 +19,11 @@ Column numbers (or names) for 1-3 traits which you want to plot.
   \item{focal}{
 Column in the dataframe containing the focal designations.
 }
+  \item{\dots}{
+Arguments to be passed to plot (or scatterplot3d for 3 traits) to customise output.
+}
 }
 
-\references{
-Arbuckle, K., Bennett, C.M. and Speed, M.P. 2014. A simple measure of the strength of convergent evolution. Methods in Ecology and Evolution 5:685 - 693.
-This citation is for the method, there is currently a manuscript being prepared to describe this package.
-}
 \author{
 Kevin Arbuckle and Amanda Minter
 }

@@ -1,14 +1,13 @@
-\name{test.windex}
-\alias{test.windex}
+\name{windex.sim.test}
+\alias{windex.sim.test}
 \title{
-Tests for particularly strong convergent evolution given topological constraints
+Tests for presence of convergent evolution (over and above that expected from Brownian motion)
 }
 \description{
-The P-value returned is for the null hypothesis that the calculated Wheatsheaf index is no higher than expected by chance given the topology of the phylogenetic tree. Note that this is not a test for convergence per se, but of whether the convergence is unusually strong.
+The P-value returned is for the null hypothesis that the calculated Wheatsheaf index is no higher than expected for traits evolving under Brownian motion (parameterised with rates of evolution and trait covariances estimated from the original traits).
 }
 \usage{
-test.windex(dat, tree, traits, focal = dat[, 2], SE = TRUE, reps,
-plot = TRUE, ...)
+windex.sim.test(dat, tree, traits, focal = dat[, 2], SE = TRUE, Nsims, plot = TRUE, ...)
 }
 \arguments{
   \item{dat}{
@@ -26,11 +25,11 @@ Column in the dataframe containing the focal designations.
 \item{SE}{
 A logical specifying whether to standardise the traits by their standard error across species, default is \code{SE=TRUE}.
 }
-  \item{reps}{
-Number of bootstrap replicates on which to base the P-value.
+  \item{Nsims}{
+Number of simulations on which to base the P-value.
 }
   \item{plot}{
-A logical indicating whether to plot the bootstrap distribution. If TRUE, a histogram is plotted with the calculated Wheatsheaf index and its 95\% confident interval overlayed on the histogram as a solid and dashed lines (respectively).
+A logical indicating whether to plot the simulated distribution. If TRUE, a histogram is plotted with the calculated Wheatsheaf index and its 95\% confident interval overlayed on the histogram as a solid and dashed lines (respectively).
 }
   \item{\dots}{
 Additional arguments passed to hist() to customise the histogram (when plot=TRUE).
@@ -41,25 +40,25 @@ Additional arguments passed to hist() to customise the histogram (when plot=TRUE
   \item{w}{Calculated Wheatsheaf index}
   \item{low95}{lower bound of 95\% confidence interval for the Wheatsheaf index obtained by jackkniving}
   \item{up95}{Upper bound of 95\% confidence interval for the Wheatsheaf index obtained by jackkniving}
-  \item{P}{P-value from bootstrapping the tips of the phylogenetic tree}
-  \item{boot.dist}{Bootstrap sample of Wheatsheaf index used to calculate P-value}
+  \item{P}{P-value obtained from comparing observed Wheatsheaf index to simulations under Brownian motion on the phylogenetic tree}
+  \item{sim.dist}{Wheatsheaf indices of simulated datasets used to calculate P-value}
 }
 \references{
 Arbuckle, K., Bennett, C.M. and Speed, M.P. 2014. A simple measure of the strength of convergent evolution. Methods in Ecology and Evolution 5:685 - 693.
 }
 \author{
-Kevin Arbuckle and Amanda Minter
+Kevin Arbuckle
 }
 
 \seealso{
 \code{\link{windex}}
-\code{\link{windex.sim.test}}
+\code{\link{test.windex}}
 }
 \examples{
 \dontrun{
 data(sample.data)
 data(sample.tree)
-test.windex(sample.data,sample.tree,traits=c("bm1","bm2"),focal=sample.data[,2],
-reps=1000,plot=TRUE,col="light grey")
+windex.sim.test(sample.data,sample.tree,traits=c("bm1","bm2"),focal=sample.data[,2],Nsims=1000,
+plot=TRUE,col="light grey")
 }
 }

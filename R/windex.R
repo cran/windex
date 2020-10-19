@@ -1,5 +1,5 @@
 windex <-
-function(dat, tree, traits, focal=dat[,2],SE=FALSE){
+function(dat, tree, traits, focal=dat[,2],SE=TRUE){
 
 if(class(tree)!="phylo") stop('Tree must be of class phylo') #The tree is of the appropriate class
 
@@ -63,5 +63,5 @@ ave<-mean(w.vec)
 low<-quantile(w.vec,probs=0.025,names=F)
 high<-quantile(w.vec,probs=0.975,names=F)
 
-return(list("Wheatsheaf Index"=w.index,"Lower 95% CI"=low,"Upper 95% CI"=high))
+return(list("w"=w.index,"low95"=low,"up95"=high))
 }

@@ -1,0 +1,18 @@
+sisterRichness<-function(tree,x){
+if(class(tree)!="phylo") stop('Tree must be of class phylo')
+if(all(tree$node.label=="NULL")) stop('Tree must have node labels representing divergence times')
+intNodes=(Ntip(tree)+1L):(Ntip(tree)+Nnode(tree))
+sisters=Children(tree,intNodes)
+sisters=matrix(unlist(sisters),byrow=TRUE,ncol=2,dimnames=list(intNodes,NULL))
+desc=Descendants(tree)
+x=(x=="1")
+l=sapply(desc,length)
+yes=sapply(desc,function(d,x)sum(x[d]),x)
+no=(l-yes)
+allno=(no==l)
+allyes=(yes==l)
+res=rbind(cbind(no[sisters[,1]],yes[sisters[,2]])[allno[sisters[,1]]&allyes[sisters[,2]],],cbind(no[sisters[,2]],yes[sisters[,1]])[allno[sisters[,2]]&allyes[sisters[,1]],])
+res=as.data.frame(res)
+colnames(res)<-c("with","without")
+return(res)
+}
