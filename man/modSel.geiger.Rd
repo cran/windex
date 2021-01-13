@@ -1,17 +1,17 @@
-\name{modSel.rayDISC}
-\alias{modSel.rayDISC}
+\name{modSel.geiger}
+\alias{modSel.geiger}
 \title{
-Model selection table for evolutionary pathway models fit in the package corHMM, based on information theoretical measures.
+Model selection table for phenotypic evolution models fit in the package geiger, based on information theoretical measures.
 }
 \description{
-Creates a model selection table based on either AIC or AICc for evolutionary pathway models fit using the rayDISC() function in the corHMM package.
+Creates a model selection table based on either AIC or AICc for phenotypic evolution models fit using the fitContinuous() and fitDiscrete() functions in the geiger package.
 }
 \usage{
-modSel.rayDISC(...,type="AICc")
+modSel.geiger(...,type="AICc")
 }
 \arguments{
   \item{\dots}{
-A set of evolutionary pathway models fitted with rayDISC() in the package corHMM, which you want to compare.
+A set of phenotypic evolution models fitted with either fitContinuous() or fitDiscrete() in the package geiger, which you want to compare.
 }
   \item{type}{
 Type of information theoretical measure you want to use (AICc or AIC are allowed), defaults to AICc.
@@ -28,12 +28,12 @@ Kevin Arbuckle
 
 \examples{
 \dontrun{
-# Two models initially run in corHMM using rayDISC (see help file for that package to fit
-# these models) and saved as objects named 'rev' (for reversible) and 'non' (for non-reversible).
+# Two models initially run in geiger using fitContinuous (see help file for that package to fit
+# these models) and saved as objects named 'bm' and 'ou'.
 
 # Model selection table using AICc
-modSel.rayDISC(non,rev)
+modSel.geiger(bm,ou)
 
 # Model selection table using AIC
-modSel.rayDISC(non,rev,type="AIC")}
+modSel.geiger(bm,ou,type="AIC")}
 }

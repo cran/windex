@@ -5,7 +5,7 @@
 Phylogenetic tree to accompany sample.data
 }
 \description{
-A simulated phylogeny from which the sample.data dataset was simulated, for use with the functions in the windex package.
+A simulated phylogeny from which the sample.data dataset was simulated, for use with the Wheatsheaf index functions in the windex package.
 }
 \usage{data(sample.tree)}
 \format{

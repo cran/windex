@@ -5,7 +5,7 @@
 Sample data for windex
 }
 \description{
-Simulated data in a format suitable for use with the functions in the windex package.
+Simulated data in a format suitable for use with the Wheatsheaf index functions in the windex package.
 }
 \usage{data(sample.data)}
 \format{

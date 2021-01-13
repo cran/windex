@@ -1,25 +1,25 @@
 \name{modSelTab}
 \alias{modSelTab}
 \title{
-Model selection table based on informational theoretical measures.
+Model selection table based on information theoretical measures.
 }
 \description{
-Creates a model selection table based on either AIC or BIC for a range of model types. The function was originally intended for GLM style models but should work for any model which the base R functions logLik() and AIC() or BIC() can be applied to.
+Creates a model selection table based on either AICc, AIC or BIC for a range of model types. The function was originally intended for GLM style models but should work for any model to which the base R functions logLik() and AIC() or BIC() can be applied.
 }
 \usage{
-modSelTab(...,type="AIC")
+modSelTab(...,type="AICc")
 }
 \arguments{
   \item{\dots}{
 A set of fitted models you want to compare.
 }
   \item{type}{
-Type of information theoretical measure you want to use (AIC or BIC are allowed), defaults to AIC.
+Type of information theoretical measure you want to use (AICc, AIC and BIC are allowed), defaults to AICc.
 }
 }
 
 \value{
-Model selection table with rownames corresponding to input model names and columns for K (number of parameters), logLik (log-likelihood), AIC (or BIC), deltaAIC (or deltaBIC, the difference between each model and the best model), Weight (Akaike weights, aka model probabilities), and Evidence ratio (the amount of evidence for the best model relative to each model such that, for instance, 4 would mean that model has 4x less evidence supporting it than the best model).
+Model selection table with rownames corresponding to input model names and columns for K (number of parameters), logLik (log-likelihood), AICc (or AIC or BIC), deltaAICc (or deltaAIC or deltaBIC, the difference between each model and the best model), Weight (Akaike weights, aka model probabilities), and Evidence ratio (the amount of evidence for the best model relative to each model such that, for instance, 4 would mean that model has 4x less evidence supporting it than the best model).
 }
 
 \author{
@@ -37,8 +37,11 @@ m1<-glm(y~x1)
 m2<-glm(y~x2)
 m3<-glm(y~x1+x2)
 
-# Model selection table using AIC
+# Model selection table using AICc
 modSelTab(m1,m2,m3)
+
+# Model selection table using AIC
+modSelTab(m1,m2,m3,type="AIC")
 
 # Model selection table using BIC
 modSelTab(m1,m2,m3,type="BIC")

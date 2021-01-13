@@ -20,7 +20,7 @@ Vector of heights of bars (same as vector given as height argument to barplot).
 Vector of upper confidence interval to plot as error bars.
 }
   \item{lower}{
-Vector of upper confidence interval to plot as error bars (defaults to symmetrical error bars but can be specified separately for lower and upper confidence intervals).
+Vector of lower confidence interval to plot as error bars (defaults to symmetrical error bars but can be specified separately for lower and upper confidence intervals to enable asymmetrical error bars to be plotted).
 }
   \item{length}{
 Width of floor and ceiling of error bars in inches (not the length of the confidence interval, just an aesthetic choice), passed to arrows().

@@ -1,4 +1,4 @@
-citHeader("To cite the windex package please use (see references to the method in relevant functions):")
+citHeader("To cite the windex package please use the following (but see also references to the Wheatsheaf index method in help files of relevant functions):")
 
 citEntry(
 	entry="Article",

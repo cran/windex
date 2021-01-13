@@ -4,7 +4,7 @@
 Tests for particularly strong convergent evolution given topological constraints
 }
 \description{
-The P-value returned is for the null hypothesis that the calculated Wheatsheaf index is no higher than expected by chance given the topology of the phylogenetic tree. Note that this is not a test for convergence per se, but of whether the convergence is unusually strong.
+The P-value returned is for the null hypothesis that the calculated Wheatsheaf index is no higher than expected by chance given the topology of the phylogenetic tree. Note that this is not a test for convergence per se, but of whether the convergence is unexpectedly strong.
 }
 \usage{
 test.windex(dat, tree, traits, focal = dat[, 2], SE = TRUE, reps,
@@ -18,7 +18,7 @@ A dataframe containing a column of 0s and 1s to denote non-focal and focal taxa 
 Phylogenetic tree of class 'phylo' containing branch lengths. The tree should also be ultrametric.
 }
   \item{traits}{
-Column numbers (or names) for the traits for which you want to calculate a Wheatsheaf index.
+Column numbers (or names) of the traits for which you want to calculate a Wheatsheaf index.
 }
   \item{focal}{
 Column in the dataframe containing the focal designations.

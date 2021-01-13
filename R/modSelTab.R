@@ -1,10 +1,27 @@
-modSelTab<-function(...,type="AIC"){
+modSelTab<-function(...,type="AICc"){
 mods<-list(...)
 getnpars<-function(obj){attributes(logLik(obj))$df}
 k<-sapply(mods,getnpars)
 lik<-sapply(mods,logLik)
 
-if (type=="AIC"){
+if (type=="AICc"){
+aic<-sapply(mods,AIC)
+n<-nrow(model.frame(mods[[1]]))
+aicc<-aic+(2*k*(k+1)/(n-k-1))
+delta<-aicc-min(aicc)
+w<-c()
+for (i in 1:length(delta)){
+w[i]<-(exp(-0.5*delta[i]))/sum(exp(-0.5*delta[1:length(delta)]))
+}
+er<-max(w)/w
+w<-round(w,digits=4)
+sel<-data.frame(k,lik,aicc,delta,w,er)
+dots<-substitute(list(...))[-1]
+rownames(sel)<-sapply(dots,deparse)
+names(sel)<-c("K","logLik","AICc","deltaAICc","Weight","Evidence ratio")
+}
+
+else if (type=="AIC"){
 aic<-sapply(mods,AIC)
 delta<-aic-min(aic)
 w<-c()
