@@ -1,6 +1,5 @@
-sisterRichness<-function(tree,x){
+richYuleInputs<-function(tree,x){
 if(class(tree)!="phylo") stop('Tree must be of class phylo')
-if(all(tree$node.label=="NULL")) stop('Tree must have node labels representing divergence times')
 intNodes=(Ntip(tree)+1L):(Ntip(tree)+Nnode(tree))
 sisters=Children(tree,intNodes)
 sisters=matrix(unlist(sisters),byrow=TRUE,ncol=2,dimnames=list(intNodes,NULL))
@@ -13,6 +12,10 @@ allno=(no==l)
 allyes=(yes==l)
 res=rbind(cbind(no[sisters[,1]],yes[sisters[,2]])[allno[sisters[,1]]&allyes[sisters[,2]],],cbind(no[sisters[,2]],yes[sisters[,1]])[allno[sisters[,2]]&allyes[sisters[,1]],])
 res=as.data.frame(res)
-colnames(res)<-c("with","without")
-return(res)
+res<-data.frame("with"=res[,2],"without"=res[,1])
+sisnodes=c(rownames(sisters)[allno[sisters[,1]]&allyes[sisters[,2]]],rownames(sisters)[allno[sisters[,2]]&allyes[sisters[,1]]])
+nodeages<-max(node.depth.edgelength(tree))-node.depth.edgelength(tree)
+tree$node.label<-nodeages[(length(nodeages)-(Nnode(tree)-1)):length(nodeages)]
+sisdivtim=as.numeric(tree$node.label[as.numeric(sisnodes)-Ntip(tree)])
+return(list(sisRich=res,divTimes=sisdivtim))
 }

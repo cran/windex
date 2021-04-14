@@ -30,7 +30,7 @@ A logical specifying whether to standardise the traits by their standard error a
 Number of bootstrap replicates on which to base the P-value.
 }
   \item{plot}{
-A logical indicating whether to plot the bootstrap distribution. If TRUE, a histogram is plotted with the calculated Wheatsheaf index and its 95\% confident interval overlayed on the histogram as a solid and dashed lines (respectively).
+A logical indicating whether to plot the bootstrap distribution. If TRUE, a histogram is plotted with the calculated Wheatsheaf index and its 95\% confidence interval overlayed on the histogram as a solid and dashed lines (respectively).
 }
   \item{\dots}{
 Additional arguments passed to hist() to customise the histogram (when plot=TRUE).
@@ -39,7 +39,7 @@ Additional arguments passed to hist() to customise the histogram (when plot=TRUE
 
 \value{
   \item{w}{Calculated Wheatsheaf index}
-  \item{low95}{lower bound of 95\% confidence interval for the Wheatsheaf index obtained by jackkniving}
+  \item{low95}{Lower bound of 95\% confidence interval for the Wheatsheaf index obtained by jackkniving}
   \item{up95}{Upper bound of 95\% confidence interval for the Wheatsheaf index obtained by jackkniving}
   \item{P}{P-value from bootstrapping the tips of the phylogenetic tree}
   \item{boot.dist}{Bootstrap sample of Wheatsheaf index used to calculate P-value}

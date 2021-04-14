@@ -29,7 +29,7 @@ A logical specifying whether to standardise the traits by their standard error a
 
 \value{
   \item{w}{Calculated Wheatsheaf index}
-  \item{low95}{lower bound of 95\% confidence interval for the Wheatsheaf index obtained by jackkniving}
+  \item{low95}{Lower bound of 95\% confidence interval for the Wheatsheaf index obtained by jackkniving}
   \item{up95}{Upper bound of 95\% confidence interval for the Wheatsheaf index obtained by jackkniving}
 }
 \references{
