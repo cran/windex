@@ -1,4 +1,4 @@
-72a05df87a209e93b40c8aae3adcadd6 *DESCRIPTION
+58785c5f49c885ee5f1ffd156e40bfb7 *DESCRIPTION
 254df02c07d8fb13066d5af1b1ea5585 *NAMESPACE
 bbf02051524e7669c46d1731d0e48753 *R/backLog.R
 db64361e010cfa588af3acc4e096fa3e *R/error.bars.R
@@ -7,6 +7,7 @@ db64361e010cfa588af3acc4e096fa3e *R/error.bars.R
 86320dda0d247207918fcce61731bd08 *R/modSel.geiger.R
 788cdaf3f54b190d245abba2c1450aa2 *R/modSel.rayDISC.R
 9e04271713ec2a3e8429f4f33b0a12db *R/modSelTab.R
+23b3d84d70a4eed1eacc458e22ab24a9 *R/pir.R
 140b644d39dd7a6939378d3d2138be48 *R/plotTrait.R
 896de2166e6354ccf6e0f49e16387242 *R/prune2data.R
 1548ec75745badbb8edab48015330b9d *R/richYuleInputs.R
@@ -20,12 +21,13 @@ cd378fc99077f57cae7161086d00cf6a *R/windex.sim.test.R
 f0bb80d375b64a21bb8e8a75fe2a6ebf *data/sample.tree.rda
 c185caae002a49587ae93620fe91cdeb *inst/CITATION
 a1687f9d428a981c3e8105875a7c0e71 *man/backLog.Rd
-f0c2ae96a49823c136ae460cf53b33c0 *man/error.bars.Rd
+9e49a3789cec84c61bdc67dc7938e6d5 *man/error.bars.Rd
 52be35b6b04a22096ddaad2cab9f7f99 *man/lrTest.Rd
 dba7d8f4055c74b32dcbee444b4dcac1 *man/mark.dist.Rd
 f5f002bf59ff87a3a955cb3e71a29da3 *man/modSel.geiger.Rd
 5d439568f1319c50005b4ee4c2d84d33 *man/modSel.rayDISC.Rd
 19e42f257314e17eb633f5d4f1f20ae5 *man/modSelTab.Rd
+bf3e750ff40f421a6a4e4c5e684b7f23 *man/pir.Rd
 864e00d303ccdcfbca67502eb626d84c *man/plotTrait.Rd
 6762a0851ad04193fd6aeeab3ea6887f *man/prune2data.Rd
 a7ab27c6fabd1078e72a7a101675dc3c *man/richYuleInputs.Rd
@@ -35,6 +37,6 @@ a7ab27c6fabd1078e72a7a101675dc3c *man/richYuleInputs.Rd
 fd0fabed00d0e9ae717edb320c8dece4 *man/test.windex.Rd
 f4bec7d93830ec2d2553f9ae516b7144 *man/treecheck.Rd
 febafe14e493bd86c9ded9daec19259a *man/treedatacheck.Rd
-e622dfaacf6f3353b9e8cda63a3c3d0f *man/windex-package.Rd
+7db257b7178c044205ca14aa72d71ea4 *man/windex-package.Rd
 1ad03d6e156b479237e2823f57ca46e0 *man/windex.Rd
 0a6fc499b83ca875d051d1ebcdc0a420 *man/windex.sim.test.Rd

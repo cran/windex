@@ -11,8 +11,8 @@ Functions to calculate the Wheatsheaf index of the strength of convergent evolut
 \tabular{ll}{
 Package: \tab windex\cr
 Type: \tab Package\cr
-Version: \tab 2.0\cr
-Date: \tab 2020-10-15\cr
+Version: \tab 2.0.2\cr
+Date: \tab 2021-04-14\cr
 License: \tab GPL2.0\cr
 }
 The core function of the package is windex(), which takes a phylogenetic tree of class 'phylo' and a dataset and calculates the Wheatsheaf index of convergent evolution along with jackknived 95\% confidence intervals. Other functions provide plotting and test functions to support the use of windex for data analysis, and several other functions are provided that are not related to convergent evolution but may be useful for some users in other capacities ("put some windex on it"). The datasets required for some of these functions (particularly windex(), test.windex(), and windex.sim.test()) must have the first column named 'species' and containing a list of species names that match those in the phylogenetic tree. One other column must be a vector denoting which species are part of the focal group (1) and which are in the non-focal group (0). Remaining columns contain values of traits that can be quantified (often continuous traits but see Arbuckle et al., 2014 for other examples).

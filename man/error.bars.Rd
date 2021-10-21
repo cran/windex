@@ -11,7 +11,7 @@ error.bars(x,y,upper,lower=upper,length=0.1,...)
 }
 \arguments{
   \item{x}{
-Command to produce a boxplot (saved as an object).
+Command to produce a barplot (saved as an object).
 }
   \item{y}{
 Vector of heights of bars (same as vector given as height argument to barplot).
