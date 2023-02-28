@@ -1,7 +1,7 @@
 windex <-
 function(dat, tree, traits, focal=dat[,2],SE=TRUE){
 
-if(class(tree)!="phylo") stop('Tree must be of class phylo') #The tree is of the appropriate class
+if(is(tree,"phylo")==FALSE) stop('Tree must be of class phylo') #The tree is of the appropriate class
 
 if(all(tree$edge.length=="NULL")) stop('Tree must contain branch lengths')
  
@@ -33,7 +33,8 @@ data.w<-dat[,traits]/se  #adjust trait cols by standard error of that col
 } else data.w<-dat[,traits]
 
 dij<-as.matrix(dist(data.w, method = "euclidean",diag=T,upper=T)) #calculate matrix of Euclidean distances for phenotypic
-Tree1<-rescale(tree,model="depth",1)
+Tree1<-tree
+Tree1$edge.length<-Tree1$edge.length/max(nodeHeights(Tree1))
       pij<-vcv(Tree1) #shared proportional distance 
       dij.<-dij/(1-log(pij+0.01)) #calculate corrected phenotypic distance matrix
 da<-mean(dij.)
@@ -51,7 +52,8 @@ if(length(traits)==1){
 options(warn=-1) #turn off warnings temporarily
 dijJ<-as.matrix(dist(data, method = "euclidean",diag=T,upper=T))
 options(warn=+1) #turn warnings back on
-Tree1<-rescale(tree,model="depth",1)
+Tree1<-tree
+Tree1$edge.length<-Tree1$edge.length/max(nodeHeights(Tree1))
      pij<-vcv(Tree1) #shared proportional distance 
      dij.J<-dijJ/(1-log(pij+0.01)) #calculate corrected phenotypic distance matrix
 daJ<-mean(dij.J,na.rm = TRUE)

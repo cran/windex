@@ -4,7 +4,7 @@
 Model selection table based on information theoretical measures.
 }
 \description{
-Creates a model selection table based on either AICc, AIC or BIC for a range of model types. The function was originally intended for GLM style models but should work for any model to which the base R functions logLik() and AIC() or BIC() can be applied.
+Creates a model selection table based on either AICc, AIC or BIC for a range of model types. The function is written for GLM style models (e.g. using glm, lm, aov, lmer, or glmer functions) but should work for any model to which the base R functions logLik(), model.frame() and AIC() or BIC() can be applied.
 }
 \usage{
 modSelTab(...,type="AICc")

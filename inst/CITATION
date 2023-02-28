@@ -1,13 +1,12 @@
-citHeader("To cite the windex package please use the following (but see also references to the Wheatsheaf index method in help files of relevant functions):")
-
-citEntry(
-	entry="Article",
+bibentry(
+	bibtype="Article",
 	title="windex: Analyzing convergent evolution using the Wheatsheaf index in R.",
 	author="Arbuckle, K. and Minter, A.",
 	journal="Evolutionary Bioinformatics",
 	year=2015,
 	volume="11",
 	pages="11-14",
-	textVersion="Arbuckle, K. and Minter, A. 2015. windex: Analyzing convergent evolution using the Wheatsheaf index in R. Evolutionary Bioinformatics 11:11-14. doi:10.4137/EBO.S20968"	   
-)
+	textVersion="Arbuckle, K. and Minter, A. 2015. windex: Analyzing convergent evolution using the Wheatsheaf index in R. Evolutionary Bioinformatics 11:11-14. doi:10.4137/EBO.S20968",	   
+	header="To cite the windex package please use the following (but see also references to the Wheatsheaf index method in help files of relevant functions):",
+	)
 

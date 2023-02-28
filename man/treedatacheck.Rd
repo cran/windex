@@ -19,7 +19,7 @@ Vector of names to be matched against tip labels of the tree(s).
 }
 
 \value{
-  Either confirms that all trees are binary, ultrametric, and have tip labels matching the list of names, or prints warnings stating which trees do not meet those criteria.
+  Either confirms that all trees are binary, ultrametric, and have tip labels matching the list of names, or prints warnings stating which trees do not meet those criteria (with troubleshooting options for mismatches between data and single trees).
 }
 
 \author{

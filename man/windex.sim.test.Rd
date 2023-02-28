@@ -29,7 +29,7 @@ A logical specifying whether to standardise the traits by their standard error a
 Number of simulations on which to base the P-value.
 }
   \item{plot}{
-A logical indicating whether to plot the simulated distribution. If TRUE, a histogram is plotted with the calculated Wheatsheaf index and its 95\% confident interval overlayed on the histogram as a solid and dashed lines (respectively).
+A logical indicating whether to plot the simulated distribution. If TRUE, a histogram is plotted with the calculated Wheatsheaf index and its 95\% confidence interval overlayed on the histogram as a solid and dashed lines (respectively).
 }
   \item{\dots}{
 Additional arguments passed to hist() to customise the histogram (when plot=TRUE).

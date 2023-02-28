@@ -7,7 +7,7 @@ Generates the inputs necessary to run richness.yule.test() in ape
 The function richness.yule.test() in the package ape requires two inputs - a dataframe with species richness of pairs of sister lineages which differ in the presence of a binary trait of interest, and a vector of divergence times of each of those sister group pairs. The richYuleInputs function generates these in a format which can be entered as the two required arguments.
 }
 \usage{
-richYuleInputs(tree, x)
+richYuleInputs(tree, x, rich=NULL)
 }
 \arguments{
   \item{tree}{
@@ -15,6 +15,9 @@ Phylogenetic tree of class 'phylo' with branch lengths in units of time.
 }
   \item{x}{
  Named vector representing the binary trait (labelled as 0 and 1 for absence and presence respectively).
+}
+  \item{rich}{
+ Optional named vector of species richness for each tip (for instance to account for incomplete sampling or when tips represent more than one species).
 }
 }
 
