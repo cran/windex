@@ -24,11 +24,11 @@ if(any(sort(rownames(dat))!=sort(tree$tip.label))) stop('Rownames of the data do
 
 if(SE==TRUE){
 if(length(traits)==1){
-  se<-sd(dat[,traits])/sqrt(length(dat[1,]))
+  se<-sd(dat[,traits])/sqrt(length(dat[,1]))
 } else{
- se<-sqrt(diag(var(dat[,traits]))/(length(dat[1,]))) #calculate standard errors for trait col independently
+ se<-sqrt(diag(var(dat[,traits]))/(length(dat[,1]))) #calculate standard errors for trait col independently
 }
-data.w<-dat[,traits]/se  #adjust trait cols by standard error of that col
+data.w<-dat[,traits]/rep(se,each=length(dat[,1]))  #adjust trait cols by standard error of that col
  
 } else data.w<-dat[,traits]
 
