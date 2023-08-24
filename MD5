@@ -1,4 +1,4 @@
-1518eef94bbe679616f6c32708d2c6b2 *DESCRIPTION
+63df32020812af9055bd9d74fe4ad929 *DESCRIPTION
 d2bb37867bff68916deb261f537381f0 *NAMESPACE
 bbf02051524e7669c46d1731d0e48753 *R/backLog.R
 db64361e010cfa588af3acc4e096fa3e *R/error.bars.R
@@ -43,6 +43,5 @@ f3bbbfd464de1ff0e4202dc28803cb17 *man/richYuleInputs.Rd
 fd0fabed00d0e9ae717edb320c8dece4 *man/test.windex.Rd
 f4bec7d93830ec2d2553f9ae516b7144 *man/treecheck.Rd
 5a82578101ab2f770fe5a5ec916ec944 *man/treedatacheck.Rd
-7db257b7178c044205ca14aa72d71ea4 *man/windex-package.Rd
 1ad03d6e156b479237e2823f57ca46e0 *man/windex.Rd
 e9e13fc34d68cc9fa9e5c56a08cdcaa8 *man/windex.sim.test.Rd
