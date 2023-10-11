@@ -7,7 +7,8 @@ Tests for presence of convergent evolution (over and above that expected from Br
 The P-value returned is for the null hypothesis that the calculated Wheatsheaf index is no higher than expected for traits evolving under Brownian motion (parameterised with rates of evolution and trait covariances estimated from the original traits).
 }
 \usage{
-windex.sim.test(dat, tree, traits, focal = dat[, 2], SE = TRUE, Nsims, plot = TRUE, ...)
+windex.sim.test(dat, tree, traits, focal = dat[, 2], SE = TRUE, Nsims,
+plot = TRUE, fossil = FALSE, ...)
 }
 \arguments{
   \item{dat}{
@@ -30,6 +31,9 @@ Number of simulations on which to base the P-value.
 }
   \item{plot}{
 A logical indicating whether to plot the simulated distribution. If TRUE, a histogram is plotted with the calculated Wheatsheaf index and its 95\% confidence interval overlayed on the histogram as a solid and dashed lines (respectively).
+}
+  \item{fossil}{
+A logical specifying whether tree is ultrametric (for instance to to presence of fossil tips), in which case a different phylogenetic distance penalty based on shared branch length rather than shared time before divergence will be used instead.
 }
   \item{\dots}{
 Additional arguments passed to hist() to customise the histogram (when plot=TRUE).

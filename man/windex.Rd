@@ -7,7 +7,7 @@ Calculates Wheatsheaf index with 95\% confidence intervals
 Takes a phylo object and trait data and returns the Wheatsheaf index for the traits on the tree along with 95\% confidence intervals obtained from jackkniving.
 }
 \usage{
-windex(dat, tree, traits, focal = dat[, 2], SE = TRUE)
+windex(dat, tree, traits, focal = dat[, 2], SE = TRUE, fossil=FALSE)
 }
 \arguments{
   \item{dat}{
@@ -24,6 +24,9 @@ Column in the dataframe containing the focal designations.
 }
   \item{SE}{
 A logical specifying whether to standardise the traits by their standard error across species, default is \code{SE=TRUE}.
+}
+  \item{fossil}{
+A logical specifying whether tree is ultrametric (for instance to to presence of fossil tips), in which case a different phylogenetic distance penalty based on shared branch length rather than shared time before divergence will be used instead.
 }
 }
 

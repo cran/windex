@@ -8,7 +8,7 @@ The P-value returned is for the null hypothesis that the calculated Wheatsheaf i
 }
 \usage{
 test.windex(dat, tree, traits, focal = dat[, 2], SE = TRUE, reps,
-plot = TRUE, ...)
+plot = TRUE, fossil = FALSE, ...)
 }
 \arguments{
   \item{dat}{
@@ -31,6 +31,9 @@ Number of bootstrap replicates on which to base the P-value.
 }
   \item{plot}{
 A logical indicating whether to plot the bootstrap distribution. If TRUE, a histogram is plotted with the calculated Wheatsheaf index and its 95\% confidence interval overlayed on the histogram as a solid and dashed lines (respectively).
+}
+  \item{fossil}{
+A logical specifying whether tree is ultrametric (for instance to to presence of fossil tips), in which case a different phylogenetic distance penalty based on shared branch length rather than shared time before divergence will be used instead.
 }
   \item{\dots}{
 Additional arguments passed to hist() to customise the histogram (when plot=TRUE).

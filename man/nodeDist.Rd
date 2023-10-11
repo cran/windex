@@ -7,7 +7,7 @@ Plotting distribution of divergence times of a pair of species from a set of phy
 Plots the distribution of age estimates of the most recent common ancestor of a specified pair of species across trees (for instance a posterior distribution).
 }
 \usage{
-nodeDist(trees,sp1,sp2,relTime=F,fillcol="blue",main="",...)
+nodeDist(trees,sp1,sp2,relTime=F,fillcol="blue",xlabel="Age (mya)",main="",add=F,...)
 }
 \arguments{
   \item{trees}{
@@ -25,8 +25,14 @@ Logical whether to plot relative (to age of root) divergence times or absolute t
   \item{fillcol}{
 Colour to plot distribution.
 }
+  \item{xlabel}{
+Label for the x-axis.
+}
   \item{main}{
 Title for plot (if desired, defaults to no title).
+}
+  \item{add}{
+Logical whether to overlay distribution on an existing plot (make sure xlim and ylim on original call are set to accomodate both distributions).
 }
   \item{\dots}{
 Additional arguments to customise output, passed to plot.
@@ -47,5 +53,5 @@ Kevin Arbuckle
 nodeDist(trees,"Naja_haje","Naja_nivea")
 
 # Density plot of relative divergence times (root age for each tree set to 1)
-nodeDist(trees,"Naja_haje","Naja_nivea",relTime=T)}
+nodeDist(trees,"Naja_haje","Naja_nivea",relTime=T,xlabel="Relative time")}
 }

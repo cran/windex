@@ -1,6 +1,6 @@
 test.windex <-
-function(dat, tree, traits, focal=dat[,2],SE = TRUE, reps,plot=TRUE,...){
-w<-windex(dat, tree, traits, focal,SE=SE) #calculate Wheatsheaf index
+function(dat, tree, traits, focal=dat[,2],SE = TRUE, reps,plot=TRUE, fossil=FALSE, ...){
+w<-windex(dat, tree, traits, focal,SE=SE,fossil=fossil) #calculate Wheatsheaf index
 w.index<-w$w
 l.ci<-w$low95
 u.ci<-w$up95
@@ -14,7 +14,7 @@ X<-dat[,-1]
 new<- dat[sample(nrow(X),replace=TRUE),-1] #randomly permutate focal and traits
 newdat<-cbind(species=dat$species,new)
 
-w.rep<-windex(newdat, tree, traits, focal) #recalculate Wheatsheaf index for new data
+w.rep<-windex(newdat, tree, traits, focal,fossil=fossil) #recalculate Wheatsheaf index for new data
 t.vec[i]<-w.rep$w
 
 }
