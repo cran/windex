@@ -1,13 +1,14 @@
 \name{nodeDist}
 \alias{nodeDist}
 \title{
-Plotting distribution of divergence times of a pair of species from a set of phylogenetic trees.
+Plotting and/or retrieving distribution of divergence times of a pair of species from a set of phylogenetic trees.
 }
 \description{
-Plots the distribution of age estimates of the most recent common ancestor of a specified pair of species across trees (for instance a posterior distribution).
+Plots and/or retrieves the distribution of age estimates of the most recent common ancestor of a specified pair of species across trees (for instance a posterior distribution).
 }
 \usage{
-nodeDist(trees,sp1,sp2,relTime=F,fillcol="blue",xlabel="Age (mya)",main="",add=F,...)
+nodeDist(trees,sp1,sp2,relTime=F,fillcol="blue",xlabel="Age (mya)",main="",
+return.ages=F,plot=T,add=F,...)
 }
 \arguments{
   \item{trees}{
@@ -31,6 +32,12 @@ Label for the x-axis.
   \item{main}{
 Title for plot (if desired, defaults to no title).
 }
+  \item{return.ages}{
+Logical whether to return a vector of the relative (to age of root) divergence times or absolute times (defaults to FALSE, i.e. only plotting the distribution).
+}
+  \item{plot}{
+Logical whether to plot distribution of divergence times, either absolute or relative as controlled by relTime argument (defaults to TRUE).
+}
   \item{add}{
 Logical whether to overlay distribution on an existing plot (make sure xlim and ylim on original call are set to accomodate both distributions).
 }
@@ -40,7 +47,7 @@ Additional arguments to customise output, passed to plot.
 }
 
 \value{
-Density plot of the distribution of relative or absolute divergence times across trees for the specified pair of species.
+Density plot of the distribution of relative or absolute divergence times across trees for the specified pair of species, and/or a vector of those divergence times.
 }
 
 \author{

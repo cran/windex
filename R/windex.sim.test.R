@@ -32,9 +32,14 @@ close(pb)
 p.val<-length(which(t.vec>=w.index))/Nsims #calculate p value
 
 if (plot==TRUE) {
- span<-max(c(t.vec,u.ci))-min(c(t.vec,l.ci))
+span<-max(c(t.vec,u.ci))-min(c(t.vec,l.ci))
 leeway<-0.1*span
-hist(t.vec,xlab='Wheatsheaf Index',main="",xlim=c(min(c(t.vec,l.ci))-leeway,max(c(t.vec,u.ci))+leeway),...)
+
+defaultArgs <- list(xlab="Wheatsheaf Index",main="",xlim=c(min(c(t.vec,l.ci))-leeway,max(c(t.vec,u.ci))+leeway))
+extraArgs <- list(...)
+defaultArgs[names(extraArgs)] <- extraArgs
+do.call(hist, c(list(x=t.vec), defaultArgs))
+
 abline(v=w.index)
 abline(v=l.ci,lty=3)
 abline(v=u.ci,lty=3)

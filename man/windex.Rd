@@ -26,7 +26,7 @@ Column in the dataframe containing the focal designations.
 A logical specifying whether to standardise the traits by their standard error across species, default is \code{SE=TRUE}.
 }
   \item{fossil}{
-A logical specifying whether tree is ultrametric (for instance to to presence of fossil tips), in which case a different phylogenetic distance penalty based on shared branch length rather than shared time before divergence will be used instead.
+A logical specifying whether the tree contains fossil tips (i.e. is not ultrametric), in which case a different phylogenetic distance penalty based on shared branch length rather than shared time before divergence will be used instead. Note that this alternative penalty for trees containing fossils hasn't yet been rigorously tested so use cautiously, but it seems to behave as expected.
 }
 }
 

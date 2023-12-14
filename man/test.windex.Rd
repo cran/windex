@@ -33,7 +33,7 @@ Number of bootstrap replicates on which to base the P-value.
 A logical indicating whether to plot the bootstrap distribution. If TRUE, a histogram is plotted with the calculated Wheatsheaf index and its 95\% confidence interval overlayed on the histogram as a solid and dashed lines (respectively).
 }
   \item{fossil}{
-A logical specifying whether tree is ultrametric (for instance to to presence of fossil tips), in which case a different phylogenetic distance penalty based on shared branch length rather than shared time before divergence will be used instead.
+A logical specifying whether the tree contains fossil tips (i.e. is not ultrametric), in which case a different phylogenetic distance penalty based on shared branch length rather than shared time before divergence will be used instead. Note that this alternative penalty for trees containing fossils hasn't yet been rigorously tested so use cautiously, but it seems to behave as expected.
 }
   \item{\dots}{
 Additional arguments passed to hist() to customise the histogram (when plot=TRUE).
