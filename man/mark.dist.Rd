@@ -8,7 +8,7 @@ Provides a breakdown of marks including summary statistics, plotted histogram wi
 }
 \usage{
 mark.dist(marks,plot=TRUE,col="light grey",main=NULL,xlab="Marks",xlim=c(0,100),
-showBounds=FALSE,y=20,...)
+showBounds=FALSE,y=20,digits=2,...)
 }
 \arguments{
   \item{marks}{
@@ -34,6 +34,9 @@ A logical which, if TRUE, adds dashed lines and text to the histogram illustrati
 }
   \item{y}{
 If showBounds=TRUE, y gives the height to plot the text on the histogram (this will likely need tweaked for each case).
+}
+  \item{digits}{
+Number of digits to round values in grade breakdown table, default gives proportions to a precision of 1% (0.01).
 }
   \item{\dots}{
 Additional arguments passed to hist() to customise the histogram.

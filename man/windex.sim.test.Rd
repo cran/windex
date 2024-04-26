@@ -8,7 +8,7 @@ The P-value returned is for the null hypothesis that the calculated Wheatsheaf i
 }
 \usage{
 windex.sim.test(dat, tree, traits, focal = dat[, 2], SE = TRUE, Nsims,
-plot = TRUE, fossil = FALSE, ...)
+plot = TRUE, fossil = FALSE, main = "", line = 2.5, ...)
 }
 \arguments{
   \item{dat}{
@@ -34,6 +34,12 @@ A logical indicating whether to plot the simulated distribution. If TRUE, a hist
 }
   \item{fossil}{
 A logical specifying whether the tree contains fossil tips (i.e. is not ultrametric), in which case a different phylogenetic distance penalty based on shared branch length rather than shared time before divergence will be used instead. Note that this alternative penalty for trees containing fossils hasn't yet been rigorously tested so use cautiously, but it seems to behave as expected.
+}
+  \item{main}{
+Main title for plot (defaults to no title).
+}
+  \item{line}{
+Adjusts position of main title (if one is given), with lower values moving it down and higher values moving it up.
 }
   \item{\dots}{
 Additional arguments passed to hist() to customise the histogram (when plot=TRUE).

@@ -1,5 +1,5 @@
 test.windex <-
-function(dat, tree, traits, focal=dat[,2],SE = TRUE, reps,plot=TRUE, fossil=FALSE, ...){
+function(dat, tree, traits, focal=dat[,2], SE = TRUE, reps,plot=TRUE, fossil=FALSE, main="", line=2.5, ...){
 w<-windex(dat, tree, traits, focal,SE=SE,fossil=fossil) #calculate Wheatsheaf index
 w.index<-w$w
 l.ci<-w$low95
@@ -28,7 +28,7 @@ defaultArgs <- list(xlab="Wheatsheaf Index",main="",xlim=c(min(c(t.vec,l.ci))-le
 extraArgs <- list(...)
 defaultArgs[names(extraArgs)] <- extraArgs
 do.call(hist, c(list(x=t.vec), defaultArgs))
-
+title(main=main,line=line)
 abline(v=w.index)
 abline(v=l.ci,lty=3)
 abline(v=u.ci,lty=3)
