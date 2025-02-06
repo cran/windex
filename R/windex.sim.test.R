@@ -1,13 +1,13 @@
 windex.sim.test <-
-function(dat, tree, traits, focal=dat[,2],SE = TRUE, Nsims, plot=TRUE, fossil=FALSE, main="",line=2.5, ...){
+function(dat, tree, traits, focal=dat[,2],SE = TRUE, Nsims, plot=TRUE, fossil=FALSE, species.col="species", main="",line=2.5, ...){
 print("Calculating Wheatsheaf index from data")
-w<-windex(dat, tree, traits, focal,SE=SE,fossil=fossil) #calculate Wheatsheaf index
+w<-windex(dat, tree, traits, focal,SE=SE,fossil=fossil,species.col=species.col) #calculate Wheatsheaf index
 w.index<-w$w
 l.ci<-w$low95
 u.ci<-w$up95
 
 print("Simulating traits evolving by BM over input tree, based on parameters estimated from real data")
-rownames(dat)<-dat$species
+rownames(dat)<-dat[,species.col]
 if(length(traits)==1){
 traits<-dat[,traits]
 names(traits)<-rownames(dat)
@@ -21,7 +21,7 @@ t.vec<-c() #set up empty vector for simulation samples
 for(i in 1:Nsims){
 info <- sprintf("%d%% done", round((i/Nsims)*100))
     setTxtProgressBar(pb,i)  
-newdat<-cbind(species=dat$species,focal=focal,as.data.frame(simtraits[,,i]))
+newdat<-cbind(species=dat[,species.col],focal=focal,as.data.frame(simtraits[,,i]))
 
 maxcols<-2+attributes(simtraits)$dim[2]
 w.sim<-windex(newdat, tree, traits=3:maxcols, focal=newdat[,2],fossil=fossil) #recalculate Wheatsheaf index for new data

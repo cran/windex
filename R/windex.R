@@ -1,5 +1,5 @@
 windex <-
-function(dat, tree, traits, focal=dat[,2],SE=TRUE,fossil=FALSE){
+function(dat, tree, traits, focal=dat[,2],SE=TRUE,fossil=FALSE,species.col="species"){
 
 if(is(tree,"phylo")==FALSE) stop('Tree must be of class phylo') #The tree is of the appropriate class
 
@@ -16,11 +16,11 @@ if(sort(unique(focal))[1]!=0) stop('Focals must be a binary string denoting non-
 if(sort(unique(focal))[2]!=1) stop('Focals must be a binary string denoting non-focals as 0 and focals as 1')
 if(length(unique(focal))!=2) stop('Focals must be a binary string denoting non-focals as 0 and focals as 1')
  
-rownames(dat)<-dat$species #sort dat by tree species name order
+rownames(dat)<-dat[,species.col] #sort dat by tree species name order
 match<-match(tree$tip.label, rownames(dat))
 dat<-dat[,][match,]
 
-if(any(sort(rownames(dat))!=sort(tree$tip.label))) stop('Rownames of the data do not match the tip labels from the tree')
+if(any(sort(rownames(dat))!=sort(tree$tip.label))) stop('Rownames of the data do not match the tip labels from the tree. Check species.col is specified correctly or perhaps the treedatacheck function might be useful')
 
 if(SE==TRUE){
 if(length(traits)==1){

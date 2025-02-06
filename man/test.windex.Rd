@@ -8,11 +8,12 @@ The P-value returned is for the null hypothesis that the calculated Wheatsheaf i
 }
 \usage{
 test.windex(dat, tree, traits, focal = dat[, 2], SE = TRUE, reps,
-plot = TRUE, fossil = FALSE, main = "", line = 2.5, ...)
+plot = TRUE, fossil = FALSE, species.col="species", main = "",
+line = 2.5, ...)
 }
 \arguments{
   \item{dat}{
-A dataframe containing a column of 0s and 1s to denote non-focal and focal taxa respectively, and columns of trait data which you which to plot. The first column must be named 'species' and contain species names that correspond to those in the phylogenetic tree.
+A dataframe containing a column of 0s and 1s to denote non-focal and focal taxa respectively, and columns of trait data which you which to plot.
 }
   \item{tree}{
 Phylogenetic tree of class 'phylo' containing branch lengths. The tree should also be ultrametric.
@@ -34,6 +35,9 @@ A logical indicating whether to plot the bootstrap distribution. If TRUE, a hist
 }
   \item{fossil}{
 A logical specifying whether the tree contains fossil tips (i.e. is not ultrametric), in which case a different phylogenetic distance penalty based on shared branch length rather than shared time before divergence will be used instead. Note that this alternative penalty for trees containing fossils hasn't yet been rigorously tested so use cautiously, but it seems to behave as expected.
+}
+  \item{species.col}{
+Name of column in the dataset containing species names corresponding to tip labels in the tree, default assumes the column is named "species".
 }
   \item{main}{
 Main title for plot (defaults to no title).

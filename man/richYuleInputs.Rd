@@ -31,7 +31,7 @@ Kevin Arbuckle
 }
 
 \seealso{
-\code{\link{richness.yule.test}}
+\code{\link[ape]{richness.yule.test}}
 }
 
 \examples{

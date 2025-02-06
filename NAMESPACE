@@ -1,6 +1,6 @@
 exportPattern("^[^\\.]")
 import(ape,utils,scatterplot3d)
-importFrom("graphics", "abline", "hist", "legend", "points", "arrows", "plot","text","polygon","lines","title")
+importFrom("graphics", "abline", "hist", "legend", "points", "arrows", "plot","text","polygon","lines","title","barplot")
 importFrom("stats", "dist", "quantile", "sd", "var", "AIC", "BIC", "logLik", "na.omit", "pchisq", "shapiro.test","model.frame","density")
 importFrom("methods", "is", "hasArg")
 importFrom("phytools", "findMRCA", "nodeHeights")

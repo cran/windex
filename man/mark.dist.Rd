@@ -36,7 +36,7 @@ A logical which, if TRUE, adds dashed lines and text to the histogram illustrati
 If showBounds=TRUE, y gives the height to plot the text on the histogram (this will likely need tweaked for each case).
 }
   \item{digits}{
-Number of digits to round values in grade breakdown table, default gives proportions to a precision of 1% (0.01).
+Number of digits to round values in grade breakdown table, default gives proportions to a precision of 1 percent (0.01).
 }
   \item{\dots}{
 Additional arguments passed to hist() to customise the histogram.

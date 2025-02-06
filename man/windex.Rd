@@ -7,11 +7,12 @@ Calculates Wheatsheaf index with 95\% confidence intervals
 Takes a phylo object and trait data and returns the Wheatsheaf index for the traits on the tree along with 95\% confidence intervals obtained from jackkniving.
 }
 \usage{
-windex(dat, tree, traits, focal = dat[, 2], SE = TRUE, fossil=FALSE)
+windex(dat, tree, traits, focal = dat[, 2], SE = TRUE, fossil = FALSE,
+species.col="species")
 }
 \arguments{
   \item{dat}{
-A dataframe containing a column of 0s and 1s to denote non-focal and focal taxa respectively, and columns of trait data which you which to plot. The first column must be named 'species' and contain species names that correspond to those in the phylogenetic tree.
+A dataframe containing a column of 0s and 1s to denote non-focal and focal taxa respectively, and columns of trait data which you which to plot.
 }
   \item{tree}{
 Phylogenetic tree of class 'phylo' containing branch lengths. The tree should also be ultrametric.
@@ -27,6 +28,9 @@ A logical specifying whether to standardise the traits by their standard error a
 }
   \item{fossil}{
 A logical specifying whether the tree contains fossil tips (i.e. is not ultrametric), in which case a different phylogenetic distance penalty based on shared branch length rather than shared time before divergence will be used instead. Note that this alternative penalty for trees containing fossils hasn't yet been rigorously tested so use cautiously, but it seems to behave as expected.
+}
+  \item{species.col}{
+Name of column in the dataset containing species names corresponding to tip labels in the tree, default assumes the column is named "species".
 }
 }
 

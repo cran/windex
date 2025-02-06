@@ -34,10 +34,10 @@ This function implements the phylogenetic imbalance ratio recommended in concert
 \references{
 Gardner, J.D. and Organ, C.L. 2021. Evolutionary sample size and consilience in phylogenetic comparative analysis. Systematic Biology 70:1061 - 1075.
 }
+
 \author{
 Kevin Arbuckle
 }
-
 
 \examples{
 data(sample.tree)
